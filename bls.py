@@ -61,7 +61,7 @@ class Output:
     def __init__(self, bk, sk, value):
         self.blindingkey = bk
         self.spendingkey = sk
-        self.value = pybullet.prove([value,1], N)
+        self.value = value # pybullet.prove([value,1], N)
         pk = wallet.GetPrivateKey(bk)
         msg = self.hash()
         self.signature = pk.sign(msg)
